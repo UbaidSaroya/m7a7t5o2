@@ -2,35 +2,31 @@ pipeline {
     agent any
 
     triggers {
-        githubPush()   // webhook trigger
+        githubPush()
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                // Git clone karne ke liye checkout scm use karo
                 checkout scm
             }
         }
 
-        stage('Print Files Content') {
+        stage('Print File Contents') {
             steps {
                 script {
-                   
-                    echo "===== test.txt ====="
-                    echo readFile('test.txt')
+                    echo "====================="
+                    echo "Content of final_test.txt:"
+                    echo readFile('final_test.txt').trim()
+                    echo "====================="
 
-                    echo "===== test2.txt ====="
-                    echo readFile('test2.txt')
+                    echo "Content of test.txt:"
+                    echo readFile('test.txt').trim()
+                    echo "====================="
 
-                    echo "===== test.txt ====="
-                    echo readFile('test.txt')
-
-
-                    print "===== final_test.txt ====="
-                    echo readFile('final_test.txt')
-                    
-
+                    echo "Content of test2.txt:"
+                    echo readFile('test2.txt').trim()
+                    echo "====================="
                 }
             }
         }
