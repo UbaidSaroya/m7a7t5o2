@@ -23,6 +23,10 @@ pipeline {
                     echo "===== test2.txt ====="
                     echo readFile('test2.txt')
 
+                    echo "===== test.txt ====="
+                    echo readFile('test.txt')
+
+
                     echo "===== final_test.txt ====="
                     echo readFile('final_test.txt')
 
