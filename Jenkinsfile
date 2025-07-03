@@ -27,7 +27,7 @@ pipeline {
                     echo readFile('test.txt')
 
 
-                    echo "===== final_test.txt ====="
+                    print "===== final_test.txt ====="
                     echo readFile('final_test.txt')
                     
 
